@@ -4,7 +4,7 @@
         <!-- SEARCHBOX -->
         <div class="searchbox-container">
             <nz-input-group nzSize="large" [nzSuffix]="suffixIconSearch">
-                <input type="text" nz-input placeholder="Buscar" [(ngModel)]="valorDeBusqueda"
+                <input type="text" nz-input placeholder="Escribe algo para buscar..." [(ngModel)]="valorDeBusqueda"
                     (keydown)="buscarCanciones()" />
             </nz-input-group>
             <ng-template #suffixIconSearch>
