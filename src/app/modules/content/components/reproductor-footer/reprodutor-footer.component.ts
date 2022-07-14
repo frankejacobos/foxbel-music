@@ -17,11 +17,13 @@ export class ReproductorFooterComponent {
   audio: any
 
   constructor(private musicaService: MusicaService) {
-    musicaService.changeEmitted$
-      .subscribe((albumId) => { this.cargarAlbum(albumId) })
-    this.disabled = true
-    this.indiceCancion = 0
     this.audio = new Audio()
+    musicaService.changeEmitted$
+      .subscribe((albumId) => {
+        this.indiceCancion = 0
+        this.cargarAlbum(albumId)
+      })
+    this.disabled = true
     this.audio.addEventListener('ended', () => { this.siguienteCancion() })
     this.volumen = 30
   }
