@@ -1,0 +1,136 @@
+.recientes-container {
+  flex-direction: column;
+  gap: 40px;
+}
+
+.header-container {
+  gap: 200px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchbox-container {
+  flex-grow: 1;
+}
+
+.user-container {
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev-container {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.album-container {
+  position: relative;
+}
+
+.album-container img {
+  width: 250px;
+}
+
+.album-container__icon {
+  position: absolute;
+  top: 23%;
+  left: 33%;
+  color: var(--color-white);
+  font-size: 90px;
+}
+
+.info-container {
+  height: 250px;
+  width: 640px;
+  overflow: hidden;
+  position: relative;
+}
+
+.info-container img {
+  width: 100%;
+}
+
+.info-container__overlay {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.info-container__text {
+  margin: 40px 32px;
+  color: var(--color-white);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.text-group {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.text-inline {
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.button-group {
+  align-items: center;
+  margin-top: 24px;
+  gap: 20px;
+}
+
+.button-group i {
+  font-size: 28px;
+}
+
+.resultados-container {
+  gap: 22px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card-container {
+  width: 160px;
+  position: relative;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-container__play-icon {
+  top: 22%;
+  left: 36%;
+  position: absolute;
+  color: var(--color-white);
+  font-size: 46px;
+}
+
+.card-container__more-icon {
+  top: 2%;
+  left: 84%;
+  position: absolute;
+  color: var(--color-white);
+  font-size: 24px;
+}
+
+.card-container img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+}
+
+::ng-deep .ant-input-affix-wrapper {
+  border-radius: 20px;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+.seguidores {
+  font-size: 10px;
+}

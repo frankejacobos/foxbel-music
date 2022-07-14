@@ -1,0 +1,26 @@
+@use "./styles/variables/colors.scss" as Colors;
+@use "./styles/variables/fonts.scss" as Fonts;
+
+@import "./styles/classes/colors-class.scss";
+@import "./styles/classes/fonts-class.scss";
+
+:root {
+    --color-white: #{Colors.$color-white};
+    --color-black: #{Colors.$color-black};
+    --color-black-light: #{Colors.$color-black-light};
+    --color-primary: #{Colors.$color-primary};
+    --color-primary-light: #{Colors.$color-primary-light};
+    --color-secondary: #{Colors.$color-secondary};
+    --color-transparent: #{Colors.$color-transparent};
+
+    --font-size-12: #{Fonts.$font-size-12};
+    --font-size-14: #{Fonts.$font-size-14};
+    --font-size-16: #{Fonts.$font-size-16};
+    --font-size-22: #{Fonts.$font-size-22};
+    --font-weight-400: #{Fonts.$font-weight-400};
+    --font-weight-700: #{Fonts.$font-weight-700};
+}
+
+.d-flex {
+    display: flex;
+}

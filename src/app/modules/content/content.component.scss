@@ -1,0 +1,28 @@
+.content-container {
+    min-height: 100vh;
+}
+
+.section-container {
+    width: 100%;
+    margin: 30px 40px;
+    margin-bottom: 120px;
+}
+
+.reproductor-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+::ng-deep .ant-menu-item-group-title {
+    margin-top: 24px;
+    font-weight: 700;
+}
+
+::ng-deep .ant-menu-inline .ant-menu-item::after {
+    left: 0;
+    border-left: 3px solid var(--color-primary);
+}

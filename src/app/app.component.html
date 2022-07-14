@@ -1,0 +1,14 @@
+<div class="app-container">
+  <div *ngIf="rutaCargada; then mostrarRuta else cargandoRutas"></div>
+
+  <ng-template #mostrarRuta>
+    <router-outlet></router-outlet>
+  </ng-template>
+
+  <ng-template #cargandoRutas>
+    <div class="cargando-container d-flex">
+      <h1 class="cargando-container__texto">CARGAND</h1>
+      <i nz-icon [nzType]="'sync'" [nzSpin]="true"></i>
+    </div>
+  </ng-template>
+</div>
