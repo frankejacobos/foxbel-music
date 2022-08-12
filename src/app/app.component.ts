@@ -6,7 +6,7 @@ import { filter, map, Subscription } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
   public rutaCargada: boolean;
@@ -17,16 +17,18 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     private readonly router: Router,
     private readonly title: Title,
-    private readonly meta: Meta,
+    private readonly meta: Meta
   ) {
     this.rutaCargada = false;
   }
 
   ngOnInit(): void {
-    this.subscription = this.router.events.pipe(filter((evento) => evento instanceof NavigationEnd),).subscribe(data => {
-      this.rutaCargada = true;
-      this.subscription?.unsubscribe();
-    });
+    this.subscription = this.router.events
+      .pipe(filter((evento) => evento instanceof NavigationEnd))
+      .subscribe(() => {
+        this.rutaCargada = true;
+        this.subscription?.unsubscribe();
+      });
     this.listenTitle();
   }
 

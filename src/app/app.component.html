@@ -1,5 +1,5 @@
 <div class="app-container">
-  <div *ngIf="rutaCargada; then mostrarRuta else cargandoRutas"></div>
+  <div *ngIf="rutaCargada; then mostrarRuta; else cargandoRutas"></div>
 
   <ng-template #mostrarRuta>
     <router-outlet></router-outlet>

@@ -1,42 +1,43 @@
 .reproductor-container {
-    width: 100%;
+  width: 100%;
 }
 
 .reproductor-details {
-    padding: 20px;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .info-album {
-    flex-direction: column;
+  flex-direction: column;
+  width: 10%;
 }
 
 .icons-container {
-    gap: 20px;
-    align-items: center;
-    font-size: 28px;
+  gap: 20px;
+  align-items: center;
+  font-size: 28px;
 }
 
 .play-icon-container {
-    background-color: var(--color-primary-light);
-    padding: 16px;
-    border-radius: 100px;
-    cursor: pointer;
+  background-color: var(--color-primary-light);
+  padding: 16px;
+  border-radius: 100px;
+  cursor: pointer;
 }
 
 .controls-container {
-    font-size: 28px;
-    gap: 40px;
-    align-items: center;
+  font-size: 28px;
+  gap: 40px;
+  align-items: center;
 }
 
 img,
 nz-slider {
-    width: 100px;
+  width: 100px;
 }
 
 i {
-    cursor: pointer;
+  cursor: pointer;
 }

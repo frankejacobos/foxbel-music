@@ -1,77 +1,98 @@
 <div class="recientes-container d-flex">
-    <!-- HEADER -->
-    <div class="header-container d-flex">
-        <!-- SEARCHBOX -->
-        <div class="searchbox-container">
-            <nz-input-group nzSize="large" [nzSuffix]="suffixIconSearch">
-                <input type="text" nz-input placeholder="Escribe algo para buscar..." [(ngModel)]="valorDeBusqueda"
-                    (keydown)="buscarCanciones()" />
-            </nz-input-group>
-            <ng-template #suffixIconSearch>
-                <i nz-icon nzType="search" (click)="buscarCanciones()"></i>
-            </ng-template>
-        </div>
-        <!-- NOMBRE USUARIO -->
-        <div class="user-container d-flex font-size-16">
-            <i class="color-primary" nz-icon nzType="user" nzTheme="outline"></i>
-            <span>Frank Jacobo</span>
-        </div>
+  <!-- HEADER -->
+  <div class="header-container d-flex">
+    <!-- SEARCHBOX -->
+    <div class="searchbox-container">
+      <nz-input-group nzSize="large" [nzSuffix]="suffixIconSearch">
+        <input
+          type="text"
+          nz-input
+          placeholder="Escribe algo para buscar..."
+          [(ngModel)]="valorDeBusqueda"
+          (keydown)="buscarCanciones()"
+        />
+      </nz-input-group>
+      <ng-template #suffixIconSearch>
+        <i nz-icon nzType="search" (click)="buscarCanciones()"></i>
+      </ng-template>
     </div>
-    <!-- CONTENIDO DE SECCIÓN -->
-    <div class="prev-container d-flex">
-        <!-- PREVISUALIZACIÓN -->
-        <div class="d-flex" *ngIf="album">
-            <div class="album-container d-flex">
-                <img [src]="album.cover_medium" alt="{{album.title_short}}">
-                <div class="album-container__icon">
-                    <i nz-icon nzType="caret-right" nzTheme="outline"></i>
-                </div>
-            </div>
-            <div class="info-container">
-                <img [src]="album.artist.picture_xl" alt="{{album.title}}">
-                <div class="info-container__overlay"></div>
-                <div class="info-container__text">
-                    <span class="font-size-22 font-weight-700">{{album.title}}</span>
-                    <div class="text-group d-flex">
-                        <div class="d-flex text-inline">
-                            <span>Lo mejor de {{album.artist.name}}</span>
-                            <span class="seguidores">{{album.fans}} seguidores</span>
-                        </div>
-                        <span>Adele Laurie Blue Adkins (Tottenham, Londres, Inglaterra, 5 de mayo de 1988), conocida
-                            simplemente como Adele, es una cantante, compositora y multinstrumentista británica.
-                        </span>
-                    </div>
-                    <div class="button-group d-flex">
-                        <button type="button" nz-button nzType="primary">Reproducir</button>
-                        <button type="button" nz-button nzType="default">Seguir</button>
-                        <i nz-icon nzType="ellipsis" nzTheme="outline"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- RESULTADOS -->
-        <div>
-            <h2 class="color-primary font-size-22">Resultados</h2>
-            <div class="d-flex resultados-container">
-                <ng-container *ngFor="let Cancion of Canciones" [ngTemplateOutlet]="cardTemplate"
-                    [ngTemplateOutletContext]="{ card: Cancion }"></ng-container>
-            </div>
-        </div>
+    <!-- NOMBRE USUARIO -->
+    <div class="user-container d-flex font-size-16">
+      <i class="color-primary" nz-icon nzType="user" nzTheme="outline"></i>
+      <span>Frank Jacobo</span>
     </div>
+  </div>
+  <!-- CONTENIDO DE SECCIÓN -->
+  <div class="prev-container d-flex">
+    <!-- PREVISUALIZACIÓN -->
+    <div class="d-flex" *ngIf="album">
+      <div class="album-container d-flex">
+        <img [src]="album.cover_medium" alt="{{ album.title_short }}" />
+        <div class="album-container__icon">
+          <i nz-icon nzType="caret-right" nzTheme="outline"></i>
+        </div>
+      </div>
+      <div class="info-container">
+        <img [src]="album.artist.picture_xl" alt="{{ album.title }}" />
+        <div class="info-container__overlay"></div>
+        <div class="info-container__text">
+          <span class="font-size-22 font-weight-700">{{ album.title }}</span>
+          <div class="text-group d-flex">
+            <div class="d-flex text-inline">
+              <span>Lo mejor de {{ album.artist.name }}</span>
+              <span class="seguidores">{{ album.fans }} seguidores</span>
+            </div>
+            <span
+              >Adele Laurie Blue Adkins (Tottenham, Londres, Inglaterra, 5 de
+              mayo de 1988), conocida simplemente como Adele, es una cantante,
+              compositora y multinstrumentista británica.
+            </span>
+          </div>
+          <div class="button-group d-flex">
+            <button type="button" nz-button nzType="primary">Reproducir</button>
+            <button type="button" nz-button nzType="default">Seguir</button>
+            <i nz-icon nzType="ellipsis" nzTheme="outline"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- RESULTADOS -->
+    <div>
+      <h2 class="color-primary font-size-22">Resultados</h2>
+      <div class="d-flex resultados-container">
+        <ng-container
+          *ngFor="let Cancion of Canciones"
+          [ngTemplateOutlet]="cardTemplate"
+          [ngTemplateOutletContext]="{ card: Cancion }"
+        ></ng-container>
+      </div>
+    </div>
+  </div>
 </div>
 
-<ng-template #cardTemplate let-card="card"> 
-    <div class="card-container d-flex">
-        <img [src]="card.album.cover_medium" alt="{{card.title}}" [title]="card.title_short" />
-        <div class="">
-            <span class="font-weight-700">{{ card.title }}</span>
-            <p class="color-black-light font-size-12 font-weight-400">{{ card.artist.name }}</p>
-        </div>
-        <div class="card-container__play-icon">
-            <i nz-icon nzType="caret-right" nzTheme="outline" (click)="seleccionarCancion(card)"></i>
-        </div>
-        <div class="card-container__more-icon">
-            <i nz-icon nzType="more" nzTheme="outline"></i>
-        </div>
+<ng-template #cardTemplate let-card="card">
+  <div class="card-container d-flex">
+    <img
+      [src]="card.album.cover_medium"
+      alt="{{ card.title }}"
+      [title]="card.title_short"
+    />
+    <div class="">
+      <span class="font-weight-700">{{ card.title }}</span>
+      <p class="color-black-light font-size-12 font-weight-400">
+        {{ card.artist.name }}
+      </p>
     </div>
+    <div class="card-container__play-icon">
+      <i
+        nz-icon
+        nzType="caret-right"
+        nzTheme="outline"
+        (click)="seleccionarCancion(card)"
+      ></i>
+    </div>
+    <div class="card-container__more-icon">
+      <i nz-icon nzType="more" nzTheme="outline"></i>
+    </div>
+  </div>
 </ng-template>

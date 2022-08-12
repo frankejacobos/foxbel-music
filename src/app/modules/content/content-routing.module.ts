@@ -11,10 +11,8 @@ const routes: Routes = [
       {
         path: '',
         data: {
-          title:
-            'Canciones Recientes',
-          description:
-            'Lista de canciones recientmente escuchadas',
+          title: 'Canciones Recientes',
+          description: 'Lista de canciones recientmente escuchadas',
         },
         component: RecientesComponent,
       },
@@ -24,6 +22,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ContentRoutingModule { }
+export class ContentRoutingModule {}
